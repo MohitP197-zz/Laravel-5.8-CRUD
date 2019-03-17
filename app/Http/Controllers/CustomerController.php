@@ -97,6 +97,9 @@ class CustomerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $customer = Customer::findOrFail($id);
+        $customer->delete();
+
+        return redirect('/customers')->with('success','Customer Successfully Deleted');
     }
 }
