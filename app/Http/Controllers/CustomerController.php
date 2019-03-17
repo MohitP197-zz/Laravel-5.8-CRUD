@@ -14,8 +14,8 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        $customer = Customer::all();
-        return view('index',compact('customer'));
+        $customers = Customer::all();
+        return view('index',compact('customers'));
     }
 
     /**
@@ -41,7 +41,7 @@ class CustomerController extends Controller
             'phoneNumber' => 'required|alpha_num',
             'email' => 'required|email|max:255|unique:users',
         ]);
-        $customer = Customer::create($validateData);
+        $customers = Customer::create($validateData);
 
         return redirect('/customers')->with('success','Customer Added Successfully');
     }
