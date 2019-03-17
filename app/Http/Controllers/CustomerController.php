@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Customer;
 
 class CustomerController extends Controller
 {
@@ -23,7 +24,7 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        //
+        return view('create');
     }
 
     /**
@@ -34,7 +35,14 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validateData = $request->validate([
+            'customerName' => 'required|max:255',
+            'phoneNumber' => 'required|alpha_num',
+            'email' => 'required|email|max:255|unique:users',
+        ]);
+        $customer = Customer::create($validateData);
+
+        return redirect('/customers')->with('success','Customer Added Successfully');
     }
 
     /**
