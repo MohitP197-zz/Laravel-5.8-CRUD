@@ -79,7 +79,14 @@ class CustomerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validateData = $request->validate([
+            'customerName' => 'required|max:255',
+            'phoneNumber' => 'required|alpha_num',
+            'email' => 'required|email|max:255|unique:users',
+        ]);
+        Customer::whereId($id)->update($validateData);
+
+        return redirect('/customers')->with('success','Customer Updated Successfully');
     }
 
     /**

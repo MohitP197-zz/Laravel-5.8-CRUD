@@ -33,7 +33,7 @@
           </div>
           <div class="form-group">
               <label for="email">Email :</label>
-              <input type="text" class="form-control" name="mail" value="{{$customer->email}}"/>
+              <input type="text" class="form-control" name="email" value="{{$customer->email}}"/>
           </div>
           <button type="submit" class="btn btn-primary">Update Customer</button>
       </form>
