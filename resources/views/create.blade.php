@@ -24,15 +24,15 @@
           <div class="form-group">
               @csrf
               <label for="name">Customer Name:</label>
-              <input type="text" class="form-control" name="book_name"/>
+              <input type="text" class="form-control" name="customerName"/>
           </div>
           <div class="form-group">
               <label for="number">Customer Number :</label>
-              <input type="text" class="form-control" name="isbn_no"/>
+              <input type="text" class="form-control" name="phoneNumber"/>
           </div>
           <div class="form-group">
               <label for="email">Email :</label>
-              <input type="text" class="form-control" name="book_price"/>
+              <input type="text" class="form-control" name="email"/>
           </div>
           <button type="submit" class="btn btn-primary">Add New Customer</button>
       </form>

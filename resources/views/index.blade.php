@@ -16,9 +16,9 @@
     <thead>
         <tr>
           <td>ID</td>
-          <td>Book Name</td>
-          <td>ISBN Number</td>
-          <td>Book Price</td>
+          <td>Customer Name</td>
+          <td>Customer Number</td>
+          <td>Email</td>
           <td colspan="2">Action</td>
         </tr>
     </thead>
